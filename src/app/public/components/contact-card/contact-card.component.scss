@@ -1,0 +1,39 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.avatar {
+  /* Center the content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Colors */
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+
+  /* Rounded border */
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
+
+  margin: 10px;
+}
+
+.avatar-letters {
+  /* Center the content */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.contact-name {
+
+  font-size: 18px;
+
+}
+
