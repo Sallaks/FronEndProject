@@ -3,7 +3,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  margin: 10px;
+  background-color: #fff;
+  margin-bottom: 5px;
 }
 
 .avatar {
@@ -20,8 +21,7 @@
   border-radius: 50%;
   height: 42px;
   width: 42px;
-
-  margin: 10px;
+  margin:10px;
 }
 
 .avatar-letters {
@@ -32,8 +32,22 @@
 }
 
 .contact-name {
-
   font-size: 18px;
+  display: flex;
+  margin-right: auto;
+  flex-direction: column;
+}
+
+.name {
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+}
+
+.card-divider {
+  border-bottom: 1px solid #d1d5db;
+  height: 1px;
+  width: calc(100vw - 70px);
 
 }
 
