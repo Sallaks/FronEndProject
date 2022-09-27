@@ -1,15 +1,17 @@
 export interface Contact {
-    Name: string,
+    name: string,
     TelephoneNumber: string,
     CelularNumber: string,
     id: string,
+    description: string,
 }
 
 export const defaultContact:Contact = {
-    Name: "First name",
+    name: "First name",
     CelularNumber: "+5412345678",
     TelephoneNumber:"34128272",
-    id:""
+    id:"",
+    description:"",
 }
 
 console.log(defaultContact)
@@ -22,52 +24,63 @@ export interface ContactJasonPlaceholder{
 
 [{
     "id": 1,
-    "first_name": "Gregoor",
+    "name": "Gregoor",
     "CelularNumber": "959-229-5000",
-    "TelephoneNumber": "946-793-7717"
+    "TelephoneNumber": "946-793-7717",
+    "description":"" 
+
   }, {
     "id": 2,
-    "first_name": "Janey",
+    "name": "Janey",
     "CelularNumber": "362-106-2026",
-    "TelephoneNumber": "495-370-2647"
+    "TelephoneNumber": "495-370-2647",
+    "description":"" 
   }, {
     "id": 3,
-    "first_name": "Torey",
+    "name": "Torey",
     "CelularNumber": "301-369-9194",
-    "TelephoneNumber": "673-372-9234"
+    "TelephoneNumber": "673-372-9234",
+    "description":"" 
   }, {
     "id": 4,
-    "first_name": "Estevan",
+    "name": "Estevan",
     "CelularNumber": "546-320-7339",
-    "TelephoneNumber": "728-429-1417"
+    "TelephoneNumber": "728-429-1417",
+    "description":"" 
   }, {
     "id": 5,
-    "first_name": "Lavinie",
+    "name": "Lavinie",
     "CelularNumber": "991-161-5946",
-    "TelephoneNumber": "945-618-7996"
+    "TelephoneNumber": "945-618-7996",
+    "description":"" 
   }, {
     "id": 6,
-    "first_name": "Raye",
+    "name": "Raye",
     "CelularNumber": "219-885-7406",
-    "TelephoneNumber": "384-679-3317"
+    "TelephoneNumber": "384-679-3317",
+    "description":"" 
   }, {
     "id": 7,
-    "first_name": "Ollie",
+    "name": "Ollie",
     "CelularNumber": "178-906-0545",
-    "TelephoneNumber": "433-151-0926"
+    "TelephoneNumber": "433-151-0926",
+    "description":"" 
   }, {
     "id": 8,
-    "first_name": "Garvey",
+    "name": "Garvey",
     "CelularNumber": "846-349-8016",
-    "TelephoneNumber": "693-964-0417"
+    "TelephoneNumber": "693-964-0417",
+    "description":"" 
   }, {
     "id": 9,
-    "first_name": "Drud",
+    "name": "Drud",
     "CelularNumber": "995-312-5834",
-    "TelephoneNumber": "528-675-7834"
+    "TelephoneNumber": "528-675-7834",
+    "description":"" 
   }, {
     "id": 10,
-    "first_name": "Brooke",
+    "name": "Brooke",
     "CelularNumber": "641-976-5995",
-    "TelephoneNumber": "328-571-9202"
+    "TelephoneNumber": "328-571-9202",
+    "description":"" 
   }]
