@@ -12,15 +12,11 @@ export class ContactsComponent implements OnInit {
   constructor() { }
 
   contacts: Contact[] = contacts;
-  
-
 
   ngOnInit(): void {
 
     console.log("contactos")
     console.log(this.contacts)
   }
-
-
 
 }
