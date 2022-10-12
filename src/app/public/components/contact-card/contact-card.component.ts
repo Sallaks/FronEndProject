@@ -25,3 +25,7 @@ export class ContactCardComponent implements OnInit {
   }
 
 }
+
+
+
+
