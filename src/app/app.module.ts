@@ -3,14 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactsModule } from './public/pages/contacts/contacts.module';
+import { ContactCardComponent } from './public/components/contact-card/contact-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    ContactsModule,
     BrowserModule,
     AppRoutingModule
   ],

@@ -15,6 +15,5 @@ import { ContactCardComponent } from '../../components/contact-card/contact-card
     CommonModule,
     ContactsRoutingModule
   ]
-  ,
 })
 export class ContactsModule { }
