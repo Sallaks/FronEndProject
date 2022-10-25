@@ -4,12 +4,15 @@
     <div class="login-box">
         <h1>login here</h1>
 
-        <form>
-            <label class="username" for="username">username</label>
-            <input type="text" placeholder="enter username">
+        <form #loginFrom="ngForm" (submit)="onSubmit()">
+
+            <label class="email" for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="enter email" required [(ngModel)]="login.email" #email="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'>
+            <p *ngIf="email.touched && email.errors">invalid email.</p>
 
             <label for="password">password</label>
-            <input type="password" placeholder="enter password">
+            <input type="password" name="password" id="password" placeholder="enter password" required [(ngModel)]="login.password" [required]="true" [minlength]="8" #password="ngModel">
+            <div *ngIf="password.touched && password.errors">the password required at least 8 characters</div>
 
             <button class="btn-login" type="submit" value="login" routerLink="/login">login</button>
 

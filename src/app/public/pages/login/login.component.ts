@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { login } from 'src/app/core/interfaces/login';
+import { contacts } from 'src/assets/dataFake';
+
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,17 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  login: login = {
+    email :'',
+    password :'', 
+  }
+
   ngOnInit(): void {
   }
+
+  onSubmit(): void {
+    console.log(this.login)
+  }
+
 
 }
