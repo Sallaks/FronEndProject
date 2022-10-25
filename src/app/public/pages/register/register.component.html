@@ -4,22 +4,22 @@
   <div class="register-box">
       <h1>Register here</h1>
 
-   <form>
+   <form #registerFrom="ngForm" (submit)="onSubmit()">
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Ingrese su email" name="email" id="email" required>
+    <input type="text" placeholder="Ingrese su email" name="email" id="email" required [(ngModel)]="user.email">
 
     <label for="Name"><b>Name</b></label>
-    <input type="text" placeholder="Ingrese su nombre" name="name" id="name" required>
+    <input type="text" placeholder="Ingrese su nombre" name="firstName" id="name"  required required [(ngModel)]="user.firstName">
 
     <label for="apellido"><b>Last name</b></label>
-    <input type="text" placeholder="Ingrese su apellido" name="lastname" id="lastname" required>
+    <input type="text" placeholder="Ingrese su apellido" name="lastname" id="lastname" required required [(ngModel)]="user.lastName">
 
     <label for="password"><b>Password (8 characters minimum):</b></label>
-    <input type="password" placeholder="Ingrese su contraseña" name="psw" id="psw" required>
+    <input type="password" placeholder="Ingrese su contraseña" name="password" id="psw" required [(ngModel)]="user.password">
 
 
 
-      <button class="btn-register"type="submit" value="register">Register</button>
+      <button class="btn-register" type="submit" value="register">Register</button>
 
      
 
