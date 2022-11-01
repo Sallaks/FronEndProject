@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactCardComponent } from './public/components/contact-card/contact-card.component';
 import { ResetpswComponent } from './public/pages/resetpsw/resetpsw.component';
+
 @NgModule({
   declarations: [
     AppComponent,

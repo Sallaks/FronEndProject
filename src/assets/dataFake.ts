@@ -1,3 +1,4 @@
+/*
 import { Contact } from "src/app/core/interfaces/contact";
 
 
@@ -63,3 +64,4 @@ export const contacts: Contact[] = [{
     "telephoneNumber": "328-571-9202",
     "description": "",
 }];
+*/

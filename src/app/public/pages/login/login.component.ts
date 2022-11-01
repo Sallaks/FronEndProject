@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { login } from 'src/app/core/interfaces/login';
-import { contacts } from 'src/assets/dataFake';
 
 
 @Component({
@@ -13,8 +12,8 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   login: login = {
-    email :'',
-    password :'', 
+    email: '',
+    password: '',
   }
 
   ngOnInit(): void {
