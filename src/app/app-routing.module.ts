@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactDetailsComponent } from './public/pages/contact-details/contact-details.component';
 
 const routes: Routes = [
   {
@@ -21,7 +20,13 @@ const routes: Routes = [
       import('./public/pages/contacts/contacts.module').then(
         (m) => m.ContactsModule
       ),
-    children: [{ path: 'contact-details', component: ContactDetailsComponent }],
+  },
+  {
+    path: 'contact-details',
+    loadChildren: () =>
+      import('./public/pages/contact-details/contact-details.module').then(
+        (m) => m.ContactDetailsModule
+      )
   },
   {
     path: 'resetpsw',
