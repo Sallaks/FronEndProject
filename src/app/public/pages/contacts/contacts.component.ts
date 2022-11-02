@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from 'src/app/core/interfaces/contact';
-import { contacts } from 'src/assets/dataFake';
+import { ContactService } from 'src/app/core/services/contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -9,14 +9,16 @@ import { contacts } from 'src/assets/dataFake';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contactService: ContactService) { }
 
-  contacts: Contact[] = contacts;
+  contacts: Contact[] = [];
 
   ngOnInit(): void {
+    this.getContacts();
+  }
 
-    console.log("contactos")
-    console.log(this.contacts)
+  async getContacts() {
+    this.contacts = await this.contactService.getContacts(1);
   }
 
 }
