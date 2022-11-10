@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactCardComponent } from './public/components/contact-card/contact-card.component';
 import { ResetpswComponent } from './public/pages/resetpsw/resetpsw.component';
+import { TapBarComponent } from './public/components/tap-bar/tap-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TapBarComponent,
   ],
   imports: [
     BrowserModule,
