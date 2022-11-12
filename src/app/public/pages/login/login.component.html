@@ -1,30 +1,23 @@
 <div class="main">
+  <div class="login-box">
+    <h1>Login</h1>
+    <form #loginFrom="ngForm" (ngSubmit)="loginUser(loginFrom)">
+      <label class="username" for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="username" required [(ngModel)]="login.username"
+             #username="ngModel">
 
-
-    <div class="login-box">
-        <h1>login here</h1>
-
-        <form #loginFrom="ngForm" (ngSubmit)="loginUser(loginFrom)">
-
-            <label class="username" for="username">Email</label>
-            <input type="text" name="username" id="username" placeholder="username" required [(ngModel)]="login.username" #username="ngModel">
-            <!--<p *ngIf="username.touched && username.errors">invalid email.</p>-->
-
-            <label for="password">password</label>
-            <input type="password" name="password" id="password" placeholder="enter password" required [(ngModel)]="login.password" [required]="true" [minlength]="8" #password="ngModel">
-            <div *ngIf="password.touched && password.errors">the password required at least 8 characters</div>
-
-            <button class="btn-login" type="submit" value="login" routerLink="/login">login</button>
-
-
-
-        </form>
-        <div class="p">
-            <a href="/resetpsw">Has olvidado tu contraseña?</a>
-            <a href="/register">registrarse</a>
-        </div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="enter password" required
+             [(ngModel)]="login.password" [required]="true" [minlength]="8" #password="ngModel">
+      <div *ngIf="password.touched && password.errors">La contraseña requiere al menos 8 carácteres</div>
+      <div  [ngClass]="{'success' : !error, 'fail': error}">
+        <span>Contraseña o Usuario incorrectos</span>
+      </div>
+      <button class="btn-login" type="submit" value="login" routerLink="/login">Login</button>
+    </form>
+    <div class="p">
+      <a href="/resetpsw">Has olvidado tu contraseña?</a>
+      <a href="/register">Registrarse</a>
     </div>
-
-
-
+  </div>
 </div>

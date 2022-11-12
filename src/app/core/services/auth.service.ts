@@ -1,35 +1,39 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Ilogin} from "../interfaces/login";
 import {ISession} from "../interfaces/session";
 import {BACKEND_URL} from "../constants/backend";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
 
   private loggedIn: boolean = false;
 
   async login(authentication: Ilogin): Promise<boolean> {
-    const res = await fetch(BACKEND_URL + '/api/authentication/authenticate', {
+
+    const token = await fetch(BACKEND_URL + '/api/authentication/authenticate', {
       method: "POST",
       body: JSON.stringify(authentication),
-      headers: { 'Content-Type': 'application/json' }
+      headers: {'Content-Type': 'application/json'}
+    }).then((res) => {
+      if (!res.ok) return
+      return res.text()
     })
-    //console.log(res.text(), 'soy el token');
-    if(!res.ok) return false
-    const token = res.text();
-    console.log(token)
-    if (!token) return false;
-    debugger;
+
+    if (!token) return false
+
     this.setSession(token);
+
     return true;
   }
 
-  isLoggedIn(){
+  isLoggedIn() {
     return this.loggedIn;
   }
 
@@ -38,7 +42,7 @@ export class AuthService {
     if (item !== 'invalid') {
       return JSON.parse(item);
     }
-    return { expiresIn: '', token: '' };
+    return {expiresIn: '', token: ''};
   }
 
   setSession(token: any, expiresTimeHours: number = 24) {
@@ -51,21 +55,11 @@ export class AuthService {
     };
 
     localStorage.setItem('session', JSON.stringify(session));
-    //window.location.reload();
-  }
-
-  async getMe() {
-    const res = await fetch('', {
-      headers: {
-        Authorization: this.getSession().token!,
-      },
-    });
-    return await res.json();
   }
 
   resetSession() {
     localStorage.removeItem('session');
     this.loggedIn = false;
-    window.location.reload();
+    this.router.navigate(["/"])
   }
 }

@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {
   }
 
+  error : boolean = false
+
 
   login: Ilogin = {
     username: '',
@@ -25,10 +27,9 @@ export class LoginComponent implements OnInit {
   }
 
   async loginUser(form:NgForm){
-    //Valor del formulario para no usar NgModel
-    console.log(form.value);
-    const token = await this.authService.login(form.value);
-    if(token) this.router.navigate(['/contacts']);
+    const res = await this.authService.login(form.value);
+    if(res) await this.router.navigate(['/contacts']);
+    else this.error = true
   }
 
 }
