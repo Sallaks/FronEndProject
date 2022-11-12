@@ -18,7 +18,7 @@ export class ContactsComponent implements OnInit {
   }
 
   async getContacts() {
-    this.contacts = await this.contactService.getContacts(1);
+    this.contacts = await this.contactService.getContacts();
   }
 
 }

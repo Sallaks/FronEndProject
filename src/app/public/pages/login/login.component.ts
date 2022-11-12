@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { login } from 'src/app/core/interfaces/login';
-
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../../../core/services/auth.service";
+import {Ilogin} from "../../../core/interfaces/login";
+import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -9,19 +11,25 @@ import { login } from 'src/app/core/interfaces/login';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
-  login: login = {
-    email: '',
+  error : boolean = false
+
+
+  login: Ilogin = {
+    username: '',
     password: '',
   }
+
 
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
-    console.log(this.login)
+  async loginUser(form:NgForm){
+    const res = await this.authService.login(form.value);
+    if(res) await this.router.navigate(['/contacts']);
+    else this.error = true
   }
-
 
 }
