@@ -10,6 +10,7 @@ export class RegisterComponent implements OnInit {
 
   constructor() { }
 
+  error : boolean = false
 
   user: user = {
     email :'',
