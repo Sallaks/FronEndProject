@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { ResetpswComponent } from './public/pages/resetpsw/resetpsw.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
