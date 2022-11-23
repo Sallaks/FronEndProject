@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   user: IUser = {
    firstName: "",
    lastName: "",
-   username: "",
+   userName: "",
    email: "",
    password: ""
   }
@@ -27,9 +27,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  register(registerfrom: NgForm): void {
-    if (registerfrom.errors === null) return
-    const res = this.registerService.save(registerfrom.value)
+  register(registerForm: NgForm): void {
+    if (registerForm.errors !== null) return
+    const res = this.registerService.save(registerForm.value)
     console.log(res)
     this.router.navigate(['/login']);
     

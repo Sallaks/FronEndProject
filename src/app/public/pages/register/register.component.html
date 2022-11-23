@@ -2,7 +2,7 @@
   <div class="register-box">
     <h1>Register here</h1>
 
-    <form #registerFrom="ngForm" (submit)="register(registerFrom)">
+    <form #registerForm="ngForm" (ngSubmit)="registerForm.form.valid && register(registerForm)">
       <label class="email" for="email"><b>Email</b></label>
       <input
         type="text"
@@ -13,6 +13,16 @@
         [(ngModel)]="user.email"
         #email="ngModel"
       />
+
+      <span
+      class="alert-danger"
+      *ngIf="
+      (email.touched || registerForm.submitted) &&
+      email.errors?.['required']
+      "
+    >
+    Email obligatorio.
+    </span>
 
       <div>
         <label for="firstName"><b>Name</b></label>
@@ -26,28 +36,60 @@
           #firstName="ngModel"
         />
 
+        <span
+        class="alert-danger"
+        *ngIf="
+        (firstName.touched || registerForm.submitted) &&
+        firstName.errors?.['required']
+        "
+      >
+      Nombre obligatorio.
+      </span>
+
+
       </div>
 
-      <label for="username"><b>Username</b></label>
+      <label for="userName"><b>Username</b></label>
       <input
         type="text"
         placeholder="Ingrese su nombre de usuario"
         name="username"
-        id="username"
+        id="userName"
         required
-        [(ngModel)]="user.username"
-        #name="ngModel"
+        [(ngModel)]="user.userName"
+        #userName="ngModel"
       />
 
-      <label for="apellido"><b>Last name</b></label>
+      <span
+      class="alert-danger"
+      *ngIf="
+      (userName.touched || registerForm.submitted) &&
+      userName.errors?.['required']
+      "
+    >
+    Username obligatorio.
+    </span>
+
+      <label for="lastName"><b>Last name</b></label>
       <input
         type="text"
         placeholder="Ingrese su apellido"
-        name="LastName"
-        id="LastName"
+        name="lastName"
+        id="lastName"
         required
         [(ngModel)]="user.lastName"
+        #lastName="ngModel"
       />
+
+      <span
+      class="alert-danger"
+      *ngIf="
+      (lastName.touched || registerForm.submitted) &&
+      firstName.errors?.['required']
+      "
+    >
+    Apellido obligatorio.
+    </span>
 
       <label for="password"><b>Password (8 characters minimum):</b></label>
       <input
