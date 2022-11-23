@@ -1,4 +1,4 @@
-import { user } from "./user"
+import { IUser } from "./user"
 
 export interface Contact {
   id: number,
@@ -6,6 +6,6 @@ export interface Contact {
   telephoneNumber: string,
   cellPhoneNumber: string,
   description: string,
-  user: user,
+  user: IUser,
   userId: number
 }
