@@ -24,9 +24,9 @@ export class AuthService {
     }).then((res) => {
       if (!res.ok) return
       return res.text()
-    })
+    });
 
-    if (!token) return false
+    if (!token) return false;
 
     this.setSession(token);
 
@@ -60,6 +60,6 @@ export class AuthService {
   resetSession() {
     localStorage.removeItem('session');
     this.loggedIn = false;
-    this.router.navigate(["/"])
+    this.router.navigate(["/"]);
   }
 }

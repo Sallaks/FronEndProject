@@ -6,6 +6,6 @@ export interface Contact {
   telephoneNumber: string,
   cellPhoneNumber: string,
   description: string,
-  user: IUser,
-  userId: number
+  userId?: number,
+  user?: IUser
 }

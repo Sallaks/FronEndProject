@@ -22,7 +22,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'contact-details',
+    path: 'contacts/:id',
     loadChildren: () =>
       import('./public/pages/contact-details/contact-details.module').then(
         (m) => m.ContactDetailsModule
