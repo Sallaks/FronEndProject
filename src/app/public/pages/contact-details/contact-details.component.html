@@ -8,20 +8,40 @@
   </div>
   <div class="avatar-container">
     <div class="avatar">
-      <!-- {{getinitials() | uppercase}} -->
+      {{getinitials() | uppercase}}
     </div>
-    <div class="texto2">  <h1>NOMBRE APELLIDO</h1> </div>
+    <div class="texto2"><h1>{{contact.name}}</h1></div>
   </div>
   <div class="card-divider2"></div>
   <div class="card">
     <div class="texto">
-      <h1>informacion de contacto</h1>
+      <h2>informacion de contacto</h2>
     </div>
     <div class="card-divider"></div>
     <div class="icons2">
-      <img src="../../../../assets/icons/telephone.svg" alt="telephone">
-      <img src="../../../../assets/icons/phone.svg" alt="phone">
-      <img src="../../../../assets/icons/description.svg" alt="description">
+      <div class="details">
+        <div class="icon">
+          <img src="../../../../assets/icons/telephone.svg" alt="telephone">
+        </div>
+        <div>
+          {{contact.cellPhoneNumber}}
+        </div>
+      </div>
+      <div class="details">
+        <div class="icon">
+          <img src="../../../../assets/icons/phone.svg" alt="phone">
+        </div>
+        <div>
+          {{contact.telephoneNumber}}
+        </div>
+
+      </div>
+      <div class="details">
+        <div class="icon">
+          <img src="../../../../assets/icons/description.svg" alt="description">
+        </div>
+        <div>{{contact.description}}</div>
+      </div>
     </div>
   </div>
 </div>
