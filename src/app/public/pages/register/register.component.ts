@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from 'src/app/core/interfaces/user';
+import { IUser } from 'src/app/core/interfaces/user';
 
 @Component({
   selector: 'app-register',
@@ -12,11 +12,11 @@ export class RegisterComponent implements OnInit {
 
   error : boolean = false
 
-  user: user = {
+  user: IUser = {
     email :'',
     firstName :'',
     lastName :'',
-    password :'', 
+    password :'',
   }
 
 
