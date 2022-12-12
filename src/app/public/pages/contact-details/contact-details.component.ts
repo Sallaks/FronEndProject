@@ -19,6 +19,7 @@ export class ContactDetailsComponent implements OnInit {
   }
   id: number | undefined
 
+
   constructor(private contactService: ContactService, private route: ActivatedRoute) {
   }
 
@@ -44,6 +45,4 @@ export class ContactDetailsComponent implements OnInit {
         )
     );
   }
-
-
 }
