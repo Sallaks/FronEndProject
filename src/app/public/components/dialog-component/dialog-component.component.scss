@@ -23,6 +23,12 @@ header {
 .btn-close {
   all: unset;
   width: 20px;
+
+  &:hover {
+   background-color: #ff5454;
+    opacity: 0.8;
+    border-radius: 50%;
+  }
 }
 
 .section-dialog {
@@ -39,7 +45,7 @@ header {
 
 }
 
-button {
+.btn-option {
   width: 120px;
   display: inline-block;
   padding: 0.5em 1em;
