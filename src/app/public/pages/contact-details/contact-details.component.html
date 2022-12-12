@@ -1,8 +1,9 @@
 <div class="main">
-
   <div class="icons">
     <a routerLink="/contacts"><img src="../../../../assets/icons/arrow_back.svg" alt="arrow_back"></a>
-    <img src="../../../../assets/icons/delete.svg" alt="delete">
+    <button class="btn-icon" (click)="dialog.openModal()">
+      <img src="../../../../assets/icons/delete.svg" alt="delete">
+    </button>
     <img src="../../../../assets/icons/edit.svg" alt="edit">
     <img src="../../../../assets/icons/favorite.svg" alt="favorite">
   </div>
@@ -44,4 +45,7 @@
       </div>
     </div>
   </div>
+
+  <app-dialog-component #dialog class="dialog" [id]="contact.id"></app-dialog-component>
 </div>
+
