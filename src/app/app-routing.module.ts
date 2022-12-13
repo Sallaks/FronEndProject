@@ -35,6 +35,13 @@ const routes: Routes = [
         (m) => m.ResetpswModule
       ),
   },
+  {
+    path: 'edit-contact',
+    loadChildren: () =>
+      import('./public/pages/edit-contact/edit-contact.module').then(
+        (m) => m.EditContactModule
+      ),
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

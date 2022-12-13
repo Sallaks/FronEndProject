@@ -1,0 +1,61 @@
+<div class="main">
+    <div class="edit-box">
+        <h1>Edit contact here</h1>
+
+    <form #editForm="ngForm" (ngSubmit)="editCont(editForm)">
+        <label class="name" for="name">Nombre</label>
+        <input
+         type="text"
+        name="name"
+        id="name"
+        placeholder="Name"
+        required
+        [(ngModel)]="contact.name"
+        #name="ngModel"
+    />
+
+    <label class="cellPhoneNumber" for="cellphonenumber"
+      >Numero de celular
+    </label>
+    <input
+      type="number"
+      name="cellPhoneNumber"
+      id="cellPhoneNumber"
+      placeholder="Numero de celular"
+      required
+      [(ngModel)]="contact.cellPhoneNumber"
+      #cellPhoneNumber="ngModel"
+    />
+
+    <label class="telephoneNumber" for="telephoneNumber"
+      >Numero de telefono</label
+    >
+    <input
+      type="number"
+      name="telephoneNumber"
+      id="telephoneNumber"
+      placeholder="Numero de telefono"
+      required
+      [(ngModel)]="contact.telephoneNumber"
+      #telephoneNumer="ngModel"
+    />
+
+    <label class="description" for="description">Descripcion</label>
+    <input
+      type="text"
+      name="description"
+      id="description"
+      placeholder="Descripcion"
+      required
+      [(ngModel)]="contact.description"
+      #description="ngModel"
+    />
+
+    <button class="btn-edit" type="submit" value="edit">
+        Edit
+      </button>
+
+
+    <button class="btn-cancel" [routerLink]="['/contacts']">Cancel</button>
+  </form>
+</div>

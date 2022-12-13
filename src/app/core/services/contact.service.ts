@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Contact} from '../interfaces/contact';
+import {IContact} from '../interfaces/contact';
 import {BACKEND_URL} from "../constants/backend";
 import {AuthService} from "./auth.service";
 
@@ -14,7 +14,7 @@ export class ContactService {
   }
 
 
-  async getContactDetails(id: number): Promise<Contact> {
+  async getContactDetails(id: number): Promise<IContact> {
     const res = await fetch(`${url}/${id}`, {
       method: 'GET',
       headers: {
@@ -25,7 +25,7 @@ export class ContactService {
     return res.json();
   }
 
-  async getContacts(): Promise<Contact[]> {
+  async getContacts(): Promise<IContact[]> {
     console.log(this.authService.getSession().token!)
     const data = await fetch(url + '/all', {
       method: 'GET',
