@@ -36,4 +36,31 @@ export class ContactService {
     });
     return data.json();
   }
+
+  async deleteContact(id: number): Promise<boolean> {
+    const res = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getSession().token!}`
+      }
+    });
+
+    return res.ok;
+  }
+
+  async updateContact(contact: IContact): Promise<boolean> {
+    const res = await fetch (`${url}/${contact.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(contact),
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getSession().token!}`
+      }
+    });
+
+    return res.ok;
+
+  }
+
 }

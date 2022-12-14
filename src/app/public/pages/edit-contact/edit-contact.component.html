@@ -1,10 +1,12 @@
 <div class="main">
     <div class="edit-box">
-        <h1>Edit contact here</h1>
+        <h1>Editar contacto</h1>
 
-    <form #editForm="ngForm" (ngSubmit)="editCont(editForm)">
+    <form #editForm="ngForm" (ngSubmit)="editForm.valid && updateContact(editForm)">
+      <input type="text" value="{{id}}" type="hidden" name="id" [(ngModel)]="contact.id" #id="ngModel">
         <label class="name" for="name">Nombre</label>
         <input
+        value="{{contact.name}}"
          type="text"
         name="name"
         id="name"
@@ -14,10 +16,21 @@
         #name="ngModel"
     />
 
+    <span
+    class="alert-danger"
+    *ngIf="
+    (name.touched || editForm.submitted) &&
+    name.errors?.['required']
+    "
+  >
+  Nombre obligatorio.
+  </span>
+
     <label class="cellPhoneNumber" for="cellphonenumber"
       >Numero de celular
     </label>
     <input
+    value="{{contact.cellPhoneNumber}}"
       type="number"
       name="cellPhoneNumber"
       id="cellPhoneNumber"
@@ -27,6 +40,16 @@
       #cellPhoneNumber="ngModel"
     />
 
+    <span
+    class="alert-danger"
+    *ngIf="
+    (cellPhoneNumber.touched || editForm.submitted) &&
+    cellPhoneNumber.errors?.['required']
+    "
+  >
+  Numero de celular obligatorio.
+  </span>
+
     <label class="telephoneNumber" for="telephoneNumber"
       >Numero de telefono</label
     >
@@ -35,7 +58,6 @@
       name="telephoneNumber"
       id="telephoneNumber"
       placeholder="Numero de telefono"
-      required
       [(ngModel)]="contact.telephoneNumber"
       #telephoneNumer="ngModel"
     />
@@ -46,16 +68,19 @@
       name="description"
       id="description"
       placeholder="Descripcion"
-      required
       [(ngModel)]="contact.description"
       #description="ngModel"
     />
 
+<div class="btn-container">
+
     <button class="btn-edit" type="submit" value="edit">
-        Edit
+        EDITAR
       </button>
 
+      <button class="btn-cancel" [routerLink]="['/contacts']">CANCELAR</button>
 
-    <button class="btn-cancel" [routerLink]="['/contacts']">Cancel</button>
+    </div>
+
   </form>
 </div>

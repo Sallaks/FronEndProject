@@ -20,7 +20,6 @@ export class ContactDetailsComponent implements OnInit {
   }
   id: number | undefined
 
-  isEdit: boolean = false;
 
   constructor(private contactService: ContactService, private route: ActivatedRoute) {
   }
@@ -48,12 +47,4 @@ export class ContactDetailsComponent implements OnInit {
         )
     );
   }
-
-  editActive(): void {
-    this.isEdit = true;
-
-  }
-
-
-
 }
