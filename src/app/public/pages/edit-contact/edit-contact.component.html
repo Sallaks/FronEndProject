@@ -3,7 +3,7 @@
         <h1>Editar contacto</h1>
 
     <form #editForm="ngForm" (ngSubmit)="editForm.valid && updateContact(editForm)">
-      <input type="text" value="{{id}}" type="hidden" name="id" [(ngModel)]="contact.id" #id="ngModel">
+      <input type="text" value="{{id}}" [hidden]="true" name="id" [(ngModel)]="contact.id" #id="ngModel">
         <label class="name" for="name">Nombre</label>
         <input
         value="{{contact.name}}"
@@ -83,4 +83,5 @@
     </div>
 
   </form>
+</div>
 </div>
