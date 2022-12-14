@@ -36,4 +36,18 @@ export class ContactService {
     });
     return data.json();
   }
+
+
+  async save(contact: Contact) {
+    const res= await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getSession().token!}`
+      },
+      body: JSON.stringify(contact),
+    }).then()  ;
+    console.log(res)
+  }
+    
 }

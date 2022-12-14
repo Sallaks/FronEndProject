@@ -1,0 +1,112 @@
+<div class="main">
+  <div class="contact-create-box">
+    <h1>Crear contacto</h1>
+
+    <form #createForm="ngForm" (ngSubmit)="createForm.form.valid && createContact(createForm)">
+        <label class="name" for="name"><b>Name</b></label>
+        <input
+         type="text"
+         placeholder="ingrese su nombre"
+         name="name"
+         id="name"
+         required
+         [(ngModel)]="contact.name"
+         #name="ngModel"
+        />
+
+        <span
+        class="alert-danger"
+        *ngIf="
+        (name.touched || createForm.submitted) &&
+        name.errors?.['required']
+        "
+    > 
+    Nombre obligatorio.
+    </span>
+      
+        <label for="cellPhoneNumber"><b>CellPhoneNumber</b></label>
+        <input 
+         type="number"
+         placeholder="ingrese numero de celular"
+         name="cellPhoneNumber"
+         id="cellPhoneNumber"
+         required
+        [(ngModel)]="contact.cellPhoneNumber"
+        #celularNumber="ngModel"
+        />
+
+        <span
+        class="alert-danger"
+        *ngIf="
+        (celularNumber.touched || createForm.submitted) &&
+        celularNumber.errors?.['required']
+        "
+    >
+    Celular obligatorio
+    </span>
+      <label for="telephoneNumber"><b>TelephoneNumber</b></label>
+      <input 
+        type="number"
+        name="telephoneNumber"
+        placeholder="ingrese numero de telefono"
+        id="telephoneNumber"
+        [(ngModel)]="contact.telephoneNumber"
+        #telephoneNumber="ngModel"
+      />
+
+
+      <label for="description"><b>Description</b></label>
+      <input
+      type="text"
+      placeholder="ingrese una Descripción"
+      name="description"
+      id="description"
+      [(ngModel)]="contact.description"
+      #description="ngModel"
+      />
+    
+     <button class="btn-create" type="submit" value="create">
+        Create
+      </button>
+
+      <button class="btn-cancel" routerLink="/contacts">Cancelar</button>
+
+    </form>
+
+
+
+
+  </div>
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

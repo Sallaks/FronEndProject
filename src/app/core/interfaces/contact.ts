@@ -1,7 +1,7 @@
 import { IUser } from "./user"
 
 export interface Contact {
-  id: number,
+  id?: number,
   name: string,
   telephoneNumber: string,
   cellPhoneNumber: string,
