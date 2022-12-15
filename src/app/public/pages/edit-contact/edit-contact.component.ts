@@ -22,7 +22,6 @@ export class EditContactComponent implements OnInit {
       console.log(params)
       this.id = params['id'];
       this.contactService.getContactDetails(this.id!).then(r => this.contact = r);
-      console.log(this.id)
     })
   }
 
@@ -38,12 +37,10 @@ export class EditContactComponent implements OnInit {
 
   isEdit: boolean = false;
 
-  updateContact(editForm : NgForm): void {
+  async updateContact(editForm : NgForm): Promise<void> {
     if (editForm.errors !== null) return
-    const res = this.contactService.updateContact(editForm.value)
-    console.log(res)
+    const res  = await this.contactService.updateContact(editForm.value)
     this.router.navigate(["/contacts"]);
-    console.log(editForm.value)
   }
 
 }

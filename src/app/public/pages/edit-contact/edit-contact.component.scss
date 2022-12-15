@@ -6,6 +6,11 @@
     align-items: center;
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
   .edit-box {
     max-width: 420px;
     min-width: 320px;
