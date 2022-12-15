@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Contact} from 'src/app/core/interfaces/contact';
+import {IContact} from 'src/app/core/interfaces/contact';
 import {ContactService} from 'src/app/core/services/contact.service';
 
 @Component({
@@ -12,9 +12,9 @@ export class ContactCardComponent implements OnInit {
 
   @Input() completeName!: string;
 
-  @Input() contact!: Contact;
+  @Input() contact!: IContact;
 
-  contactComplete: Contact | undefined;
+  contactComplete: IContact | undefined;
 
   ngOnInit(): void {
   }

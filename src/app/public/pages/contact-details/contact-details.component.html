@@ -4,7 +4,7 @@
     <button class="btn-icon" (click)="dialog.openModal()">
       <img src="../../../../assets/icons/delete.svg" alt="delete">
     </button>
-    <img src="../../../../assets/icons/edit.svg" alt="edit">
+    <a [routerLink]="['/edit-contact', contact.id]"><img src="../../../../assets/icons/edit.svg" alt="edit"></a>
     <img src="../../../../assets/icons/favorite.svg" alt="favorite">
   </div>
   <div class="avatar-container">

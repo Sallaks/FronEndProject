@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from 'src/app/core/interfaces/contact';
+import { IContact } from 'src/app/core/interfaces/contact';
 import { ContactService } from 'src/app/core/services/contact.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class ContactsComponent implements OnInit {
 
   constructor(private contactService: ContactService) { }
 
-  contacts: Contact[] = [];
+  contacts: IContact[] = [];
 
   ngOnInit(): void {
     this.getContacts();

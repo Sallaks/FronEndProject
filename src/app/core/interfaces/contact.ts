@@ -1,6 +1,6 @@
 import { IUser } from "./user"
 
-export interface Contact {
+export interface IContact {
   id: number,
   name: string,
   telephoneNumber: string,
