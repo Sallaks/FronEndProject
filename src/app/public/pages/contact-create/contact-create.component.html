@@ -2,7 +2,7 @@
   <div class="contact-create-box">
     <h1>Crear contacto</h1>
 
-    <form #createForm="ngForm" (ngSubmit)="createForm.form.valid && createContact(createForm)">
+    <form class="form" #createForm="ngForm" (ngSubmit)="createForm.form.valid && createContact(createForm)">
         <label class="name" for="name"><b>Name</b></label>
         <input
          type="text"
@@ -65,11 +65,13 @@
       #description="ngModel"
       />
     
-     <button class="btn-create" type="submit" value="create">
-        Create
-      </button>
+      <div class="container-btn">
+       <button class="btn-create" type="submit" value="create">
+         Create
+       </button>
 
-      <button class="btn-cancel" routerLink="/contacts">Cancelar</button>
+       <button class="btn-cancel" routerLink="/contacts">Cancelar</button>
+      </div>
 
     </form>
 
