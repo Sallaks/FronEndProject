@@ -3,7 +3,7 @@
     <h1>Crear contacto</h1>
 
     <form class="form" #createForm="ngForm" (ngSubmit)="createForm.form.valid && createContact(createForm)">
-        <label class="name" for="name"><b>Name</b></label>
+        <label class="name" for="name"><b>Nombre</b></label>
         <input
          type="text"
          placeholder="ingrese su nombre"
@@ -24,7 +24,7 @@
     Nombre obligatorio.
     </span>
       
-        <label for="cellPhoneNumber"><b>CellPhoneNumber</b></label>
+        <label for="cellPhoneNumber"><b>Numero de celular</b></label>
         <input 
          type="number"
          placeholder="ingrese numero de celular"
@@ -44,7 +44,7 @@
     >
     Celular obligatorio
     </span>
-      <label for="telephoneNumber"><b>TelephoneNumber</b></label>
+      <label for="telephoneNumber"><b>Numero de telefono</b></label>
       <input 
         type="number"
         name="telephoneNumber"
@@ -55,7 +55,7 @@
       />
 
 
-      <label for="description"><b>Description</b></label>
+      <label for="description"><b>Descripcion</b></label>
       <input
       type="text"
       placeholder="ingrese una Descripción"
@@ -67,7 +67,7 @@
     
       <div class="container-btn">
        <button class="btn-create" type="submit" value="create">
-         Create
+         Crear
        </button>
 
        <button class="btn-cancel" routerLink="/contacts">Cancelar</button>
