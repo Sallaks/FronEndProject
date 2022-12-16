@@ -1,0 +1,158 @@
+.main {
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .container-btn{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 14px;
+
+  }
+  
+  .contact-create-box {
+    max-width: 420px;
+    min-width: 320px;
+    width: 50%;
+    color: #3A00E5;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 40px;
+  }
+  
+  .contact-create-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  
+  .contact-create-box label{
+    margin: 0;
+    padding: 5px 2px;
+    display: block;
+    font-size: 13px;
+    
+  }
+  
+  
+  .contact-create-box input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #AFB1B6;
+    border-radius: 8px;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    background-color: #FFFFFF;
+  }
+  
+  
+  .btn-create {
+    border: none;
+    outline: none;
+    background-color: black;
+    color: #FFFFFF;
+    font-size: 14px;
+    border-radius: 20px;
+    padding: 8px 16px;
+    width: 40%;
+    margin: 20px 0;
+    cursor: pointer;
+    touch-action: manipulation;
+
+    &:hover {
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2),
+      0px 2px 2px 0px rgba(0,0,0,0.14),
+      0px 1px 5px 0px rgba(0,0,0,0.12);
+    }
+  
+    &:active {
+      box-shadow: 0 5px 5px -3px rgba(0,0,0,0.2),
+      0px 8px 10px 1px rgba(0,0,0,0.14),
+      0px 3px 14px 2px rgba(0,0,0,0.12);
+    }
+  }
+
+
+
+
+  .btn-cancel {
+    color: #202124;
+    background-color: white;
+    border: 0.5px solid #d6d6d6;
+    width: 40%;
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 20px 0;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+  
+    &:hover {
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2),
+      0px 2px 2px 0px rgba(0,0,0,0.14),
+      0px 1px 5px 0px rgba(0,0,0,0.12);
+    }
+  
+    &:active {
+      box-shadow: 0 5px 5px -3px rgba(0,0,0,0.2),
+      0px 8px 10px 1px rgba(0,0,0,0.14),
+      0px 3px 14px 2px rgba(0,0,0,0.12);
+    }
+  }
+
+  .contact-create-box input[type="submit"]:hover {
+    color: #3A00E5;
+  }
+  
+  .contact-create-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .contact-create-box a:hover {
+    color: rgb(0, 0, 0);
+  }
+  
+  .fail {
+    color: #e50000;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .p{    
+    color: #000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn-disable {
+    background-color: gray;
+  }
+  
+  .alert-danger{
+    color:#e50000;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  
+  
+  

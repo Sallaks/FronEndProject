@@ -22,6 +22,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'contact-create',
+    loadChildren: () =>
+      import('./public/pages/contact-create/contact-create.module').then(
+        (m) => m.ContactCreateModule
+      ),
+  },
+  {
     path: 'contacts/:id',
     loadChildren: () =>
       import('./public/pages/contact-details/contact-details.module').then(
