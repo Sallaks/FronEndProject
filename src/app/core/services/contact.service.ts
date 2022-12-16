@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Contact} from '../interfaces/contact';
+import {IContact} from '../interfaces/contact';
 import {BACKEND_URL} from "../constants/backend";
 import {AuthService} from "./auth.service";
 
@@ -14,7 +14,7 @@ export class ContactService {
   }
 
 
-  async getContactDetails(id: number): Promise<Contact> {
+  async getContactDetails(id: number): Promise<IContact> {
     const res = await fetch(`${url}/${id}`, {
       method: 'GET',
       headers: {
@@ -25,7 +25,7 @@ export class ContactService {
     return res.json();
   }
 
-  async getContacts(): Promise<Contact[]> {
+  async getContacts(): Promise<IContact[]> {
     console.log(this.authService.getSession().token!)
     const data = await fetch(url + '/all', {
       method: 'GET',
@@ -38,7 +38,8 @@ export class ContactService {
   }
 
 
-  async save(contact: Contact) {
+
+  async save(contact: IContact) {
     const res= await fetch(url, {
       method: 'POST',
       headers: {
@@ -50,4 +51,31 @@ export class ContactService {
     console.log(res)
   }
     
+
+  async deleteContact(id: number): Promise<boolean> {
+    const res = await fetch(`${url}/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getSession().token!}`
+      }
+    });
+
+    return res.ok;
+  }
+
+  async updateContact(contact: IContact): Promise<boolean> {
+    const res = await fetch (`${url}/${contact.id}`, {
+      method: 'PUT',
+      body: JSON.stringify(contact),
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getSession().token!}`
+      }
+    });
+
+    return res.ok;
+
+  }
+
 }
