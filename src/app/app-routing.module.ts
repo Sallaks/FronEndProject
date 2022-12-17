@@ -36,6 +36,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'contacts-book',
+    loadChildren: () =>
+      import('./public/pages/contacts-book/contacts-book.module').then(
+        (m) => m.ContactsBookModule
+      ),
+  },
+  {
     path: 'edit-contact/:id',
     loadChildren: () =>
       import('./public/pages/edit-contact/edit-contact.module').then(

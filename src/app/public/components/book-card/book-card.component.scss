@@ -1,0 +1,44 @@
+.card-cointainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
+    margin-bottom: 5px;
+  }
+  
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-radius: 50%;
+    height: 42px;
+    width: 42px;
+    margin: 10px;
+  }
+  
+  .avatar-letters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .book-name {
+    font-size: 18px;
+    display: flex;
+    margin-right: auto;
+    flex-direction: column;
+  }
+  
+  .name {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .card-divider {
+    border-bottom: 1px solid #d1d5db;
+    height: 1px;
+    width: calc(100vw - 70px);
+  }
