@@ -37,6 +37,21 @@ export class ContactService {
     return data.json();
   }
 
+
+
+  async save(contact: IContact) {
+    const res= await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getSession().token!}`
+      },
+      body: JSON.stringify(contact),
+    }).then()  ;
+    console.log(res)
+  }
+    
+
   async deleteContact(id: number): Promise<boolean> {
     const res = await fetch(`${url}/${id}`, {
       method: 'DELETE',
