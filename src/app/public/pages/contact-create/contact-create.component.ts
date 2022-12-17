@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Contact } from 'src/app/core/interfaces/contact';
+import { IContact } from 'src/app/core/interfaces/contact';
 import { ContactService } from 'src/app/core/services/contact.service';
 
 
@@ -16,7 +16,8 @@ export class ContactCreateComponent implements OnInit {
 
   error : boolean = false
 
-  contact: Contact = {
+  contact: IContact = {
+    id: 0,
     name: "",
     telephoneNumber: "",
     cellPhoneNumber: "",
