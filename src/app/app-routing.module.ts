@@ -22,7 +22,14 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'contact-details',
+    path: 'contact-create',
+    loadChildren: () =>
+      import('./public/pages/contact-create/contact-create.module').then(
+        (m) => m.ContactCreateModule
+      ),
+  },
+  {
+    path: 'contacts/:id',
     loadChildren: () =>
       import('./public/pages/contact-details/contact-details.module').then(
         (m) => m.ContactDetailsModule
@@ -33,6 +40,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./public/pages/resetpsw/resetpsw.module').then(
         (m) => m.ResetpswModule
+      ),
+  },
+  {
+    path: 'edit-contact/:id',
+    loadChildren: () =>
+      import('./public/pages/edit-contact/edit-contact.module').then(
+        (m) => m.EditContactModule
       ),
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },

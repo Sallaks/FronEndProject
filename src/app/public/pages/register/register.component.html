@@ -1,34 +1,121 @@
 <div class="main">
-
-    
   <div class="register-box">
-      <h1>Register here</h1>
+    <h1>Register here</h1>
 
-   <form #registerFrom="ngForm" (submit)="onSubmit()">
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Ingrese su email" name="email" id="email" required [(ngModel)]="user.email">
+    <form #registerForm="ngForm" (ngSubmit)="registerForm.form.valid && register(registerForm)">
+      <label class="email" for="email"><b>Email</b></label>
+      <input
+        type="text"
+        placeholder="Ingrese su email"
+        name="Email"
+        id="Email"
+        required
+        [(ngModel)]="user.email"
+        #email="ngModel"
+      />
 
-    <label for="Name"><b>Name</b></label>
-    <input type="text" placeholder="Ingrese su nombre" name="firstName" id="name"  required required [(ngModel)]="user.firstName">
+      <span
+      class="alert-danger"
+      *ngIf="
+      (email.touched || registerForm.submitted) &&
+      email.errors?.['required']
+      "
+    >
+    Email obligatorio.
+    </span>
 
-    <label for="apellido"><b>Last name</b></label>
-    <input type="text" placeholder="Ingrese su apellido" name="lastname" id="lastname" required required [(ngModel)]="user.lastName">
-
-    <label for="password"><b>Password (8 characters minimum):</b></label>
-    <input type="password" placeholder="Ingrese su contraseña" name="password" id="psw" required [(ngModel)]="user.password">
-
-
-
-      <button class="btn-register" type="submit" value="register">Register</button>
-
-     
-
-   </form>
-   <div class="p">
-      <a href=''>Ya tiene una cuenta? Inicie sesion</a> 
       <div>
+        <label for="firstName"><b>Name</b></label>
+        <input
+          type="text"
+          placeholder="Ingrese su nombre"
+          name="firstName"
+          id="firstName"
+          required
+          [(ngModel)]="user.firstName"
+          #firstName="ngModel"
+        />
+
+        <span
+        class="alert-danger"
+        *ngIf="
+        (firstName.touched || registerForm.submitted) &&
+        firstName.errors?.['required']
+        "
+      >
+      Nombre obligatorio.
+      </span>
+
+
+      </div>
+
+      <label for="userName"><b>Username</b></label>
+      <input
+        type="text"
+        placeholder="Ingrese su nombre de usuario"
+        name="username"
+        id="userName"
+        required
+        [(ngModel)]="user.userName"
+        #userName="ngModel"
+      />
+
+      <span
+      class="alert-danger"
+      *ngIf="
+      (userName.touched || registerForm.submitted) &&
+      userName.errors?.['required']
+      "
+    >
+    Username obligatorio.
+    </span>
+
+      <label for="lastName"><b>Last name</b></label>
+      <input
+        type="text"
+        placeholder="Ingrese su apellido"
+        name="lastName"
+        id="lastName"
+        required
+        [(ngModel)]="user.lastName"
+        #lastName="ngModel"
+      />
+
+      <span
+      class="alert-danger"
+      *ngIf="
+      (lastName.touched || registerForm.submitted) &&
+      firstName.errors?.['required']
+      "
+    >
+    Apellido obligatorio.
+    </span>
+
+      <label for="password"><b>Password (8 characters minimum):</b></label>
+      <input
+        type="password"
+        placeholder="Ingrese su contraseña"
+        name="Password"
+        id="Password"
+        required
+        [(ngModel)]="user.password"
+        [required]="true"
+        [minlength]="8"
+        #password="ngModel"
+      />
+      <div *ngIf="password.touched && password.errors">
+        La contraseña requiere al menos 8 carácteres
+      </div>
+      <div [ngClass]="{ success: !error, fail: error }"></div>
+
+      <button class="btn-register" type="submit" value="register">
+        Register
+      </button>
+
+      <div class="p">
+        <a href="">Ya tiene una cuenta? Inicie sesion</a>
+        <div></div>
+      </div>
+    </form>
   </div>
-
-
-
 </div>

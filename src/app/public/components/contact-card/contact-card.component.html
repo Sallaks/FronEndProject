@@ -4,7 +4,7 @@
       {{getinitials() | uppercase}}
     </div>
   </div>
-  <div [routerLink]="['contact-details']" class="contact-name">
+  <div [routerLink]="['/contacts', contact.id]" class="contact-name">
     <p class="name">
       {{contact.name}}
     </p>

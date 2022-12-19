@@ -1,0 +1,13 @@
+<dialog class="confirm-dialog"  #modal>
+  <button #open (click)="modal.showModal()" class="open-btn"></button>
+  <header>
+    <button class="btn-close" (click)="modal.close()"><img src="../../../../assets/icons/close.svg" alt="close"></button>
+  </header>
+  <section class="section-dialog">
+  Quiere eliminar el contacto?
+  </section>
+  <footer class="footer">
+    <button class="btn-cancel btn-option" (click)="modal.close()">CANCELAR</button>
+    <button class="btn-confirm btn-option" (click)="deleteContact(id, modal)">ELIMINAR</button>
+  </footer>
+</dialog>

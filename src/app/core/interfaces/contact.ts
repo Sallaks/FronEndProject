@@ -1,22 +1,11 @@
-import { user } from "./user"
+import { IUser } from "./user"
 
-export interface Contact {
+export interface IContact {
   id: number,
   name: string,
   telephoneNumber: string,
-  celularNumber: string,
+  cellPhoneNumber: string,
   description: string,
-  user: user,
-  userId: number
+  userId?: number,
+  user?: IUser
 }
-/*
-export const defaultContact: Contact = {
-  name: "First name",
-  celularNumber: "+5412345678",
-  telephoneNumber: "34128272",
-  id: 0,
-  description: "",
-}
-
-console.log(defaultContact)
-*/
