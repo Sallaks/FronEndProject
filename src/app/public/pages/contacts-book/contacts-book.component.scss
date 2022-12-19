@@ -61,7 +61,7 @@
 .cardicon {
   position: relative;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .cardlink::after {
@@ -92,7 +92,7 @@
 .cardtitle {
   grid-row: 3/4;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
 }
 
 .card__apply {
@@ -103,13 +103,13 @@
 //  CARD BACKGROUNDS 
 
 .card-1 {
-  background: radial-gradient(#3A00E5, #3A00E5);
+  background-color: white;
 }
 
 .card-2 {
-  background: radial-gradient(#3A00E5, #3A00E5);
+  background-color: white;
 }
 
 .card-3 {
-  background: radial-gradient(#3A00E5, #3A00E5);
+  background-color: white;
 }
