@@ -25,9 +25,9 @@ export class ContactService {
     return res.json();
   }
 
-  async getContacts(): Promise<IContact[]> {
+  async getContacts(contactsBookId : number): Promise<IContact[]> {
     console.log(this.authService.getSession().token!)
-    const data = await fetch(url + '/all', {
+    const data = await fetch(`${url}/ContactsBook/${contactsBookId}`, {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -37,20 +37,18 @@ export class ContactService {
     return data.json();
   }
 
-
-
   async save(contact: IContact) {
-    const res= await fetch(url, {
+    console.log(contact)
+    const res = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
         'Authorization': `Bearer ${this.authService.getSession().token!}`
       },
       body: JSON.stringify(contact),
-    }).then()  ;
+    });
     console.log(res)
   }
-    
 
   async deleteContact(id: number): Promise<boolean> {
     const res = await fetch(`${url}/${id}`, {

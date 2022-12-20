@@ -2,5 +2,9 @@
   <div class="heading">
     <h1 class="h1">Agendas</h1>
   </div>
-  <app-book-card></app-book-card>
+  <div class="add">
+    <button class="btn-add" (click)="addContactsBook(codeInput.value)">Añadir Agenda</button>
+    <input type="number" #codeInput value="{{codeInput.value}}"/>
+  </div>
+  <app-book-card *ngFor="let contactsBook of contactsBooks" [contactsBook]="contactsBook"></app-book-card>
 </div>

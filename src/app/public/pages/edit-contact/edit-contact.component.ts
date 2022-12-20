@@ -16,6 +16,16 @@ export class EditContactComponent implements OnInit {
   constructor(private contactService: ContactService, private router: Router, private route: ActivatedRoute ) { }
 
 
+  contact: IContact = {
+    id: 0,
+    name: "",
+    telephoneNumber: "",
+    cellPhoneNumber: "",
+    description: "",
+    contactsBookId: 0
+  }
+
+  isEdit: boolean = false;
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -26,21 +36,11 @@ export class EditContactComponent implements OnInit {
   }
 
 
-
-  contact: IContact = {
-    id: 0,
-    name: "",
-    telephoneNumber: "",
-    cellPhoneNumber: "",
-    description: "",
-  }
-
-  isEdit: boolean = false;
-
   async updateContact(editForm : NgForm): Promise<void> {
     if (editForm.errors !== null) return
-    const res  = await this.contactService.updateContact(editForm.value)
-    this.router.navigate(["/contacts"]);
+    editForm.value.contactsBookId = this.contact.contactsBookId;
+    const res  = await this.contactService.updateContact(editForm.value);
+    this.router.navigate(['/contacts-book', this.contact.contactsBookId]);
   }
 
 }

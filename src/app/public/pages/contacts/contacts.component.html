@@ -11,9 +11,7 @@
     <app-contact-card *ngFor="let contact of contacts" [contact]="contact"></app-contact-card>
   </div>
  <div class="crete-container">
-  <button  class="btn-create"  routerLink="/contact-create"> <img src="../../../../assets/icons/add.svg" alt="add"></button>
-  
-
+  <button  class="btn-create"  [routerLink]="['contact-create']"><img src="../../../../assets/icons/add.svg" alt="add"></button>
   </div>
 </div>
 

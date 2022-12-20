@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { IContact } from 'src/app/core/interfaces/contact';
 import { ContactService } from 'src/app/core/services/contact.service';
 
@@ -12,28 +12,33 @@ import { ContactService } from 'src/app/core/services/contact.service';
 })
 export class ContactCreateComponent implements OnInit {
 
-  constructor(private contactService : ContactService, private router: Router) { }
+  constructor(private contactService : ContactService, private router: Router, private route : ActivatedRoute) { }
 
   error : boolean = false
+
+  contactsBookId! : number;
 
   contact: IContact = {
     id: 0,
     name: "",
     telephoneNumber: "",
     cellPhoneNumber: "",
-    description: ""
+    description: "",
+    contactsBookId: this.contactsBookId
   }
-
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      console.log(params)
+      this.contactsBookId = params['id'];
+    })
   }
 
- 
   async createContact(createForm: NgForm): Promise<void>{
     if (createForm.errors !== null) return
-    const res = await this.contactService.save(createForm.value)
-    console.log(res)
-    this.router.navigate(['/contacts']);
+    createForm.value.contactsBookId = this.contactsBookId;
+    await this.contactService.save(createForm.value);
+    await this.router.navigate(['/contacts-book', this.contactsBookId]);
   }
 
 }

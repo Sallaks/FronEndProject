@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IContact } from 'src/app/core/interfaces/contact';
 import { ContactService } from 'src/app/core/services/contact.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-contacts',
@@ -9,16 +10,22 @@ import { ContactService } from 'src/app/core/services/contact.service';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private route: ActivatedRoute) { }
 
   contacts: IContact[] = [];
 
+  contactBookId: number = 0;
+
   ngOnInit(): void {
-    this.getContacts();
+    this.route.params.subscribe(params => {
+      console.log(params)
+      this.contactBookId = params['id'];
+      this.getContacts(this.contactBookId);
+    })
   }
 
-  async getContacts() {
-    this.contacts = await this.contactService.getContacts();
+  async getContacts(contactBookId: number) {
+    this.contacts = await this.contactService.getContacts(contactBookId);
   }
 
 }

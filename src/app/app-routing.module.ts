@@ -15,21 +15,21 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'contacts',
+    path: 'contacts-book/:id',
     loadChildren: () =>
       import('./public/pages/contacts/contacts.module').then(
         (m) => m.ContactsModule
       ),
   },
   {
-    path: 'contact-create',
+    path: 'contacts-book/:id/contact-create',
     loadChildren: () =>
       import('./public/pages/contact-create/contact-create.module').then(
         (m) => m.ContactCreateModule
       ),
   },
   {
-    path: 'contacts/:id',
+    path: 'contacts-book/:id/contacts/:id',
     loadChildren: () =>
       import('./public/pages/contact-details/contact-details.module').then(
         (m) => m.ContactDetailsModule
@@ -50,7 +50,7 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'edit-contact/:id',
+    path: 'contacts-book/:id/contacts/:id/edit-contact',
     loadChildren: () =>
       import('./public/pages/edit-contact/edit-contact.module').then(
         (m) => m.EditContactModule

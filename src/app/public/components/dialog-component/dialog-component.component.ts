@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild,} from '@angular/core';
 import {ContactService} from "../../../core/services/contact.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-dialog-component',
@@ -13,9 +13,14 @@ export class DialogComponentComponent implements OnInit {
 
   constructor(private contactService : ContactService, private router: Router) { }
 
-  @Input() id : number = 0;
+  @Input() id! : number;
+
+  @Input() contactsBookId!: number;
+
+
   ngOnInit(): void {
     console.log(this.openButton);
+
   }
 
   openModal() {
@@ -25,7 +30,7 @@ export class DialogComponentComponent implements OnInit {
 
   deleteContact(id: number, modal: HTMLDialogElement) {
     this.contactService.deleteContact(id).then(() => {
-      this.router.navigate(["/contacts"]).then(() => modal.close())
+      this.router.navigate(["contacts-book", this.contactsBookId]).then(() => modal.close())
     });
   }
 

@@ -1,7 +1,7 @@
 <div class="card card-1">
   <h2 class="card-title"></h2>
   <div class="rename">
-    <input #name [value]="completeName" class="input-name" type="text" [disabled]="isEdit"/>
+    <input #name [value]="contactsBook.name" class="input-name" type="text" [disabled]="isEdit"/>
     <div *ngIf="!isEdit" class="options">
       <button class="btn btn-save" (click)="save(name.value)"><img class="option-icon" src="assets/icons/check.svg" alt="✓"></button>
       <button class="btn btn-cancel" (click)="cancel(name)"><img class="option-icon" src="assets/icons/cancel.svg" alt="x"></button>
@@ -10,4 +10,13 @@
   <div class="edit">
     <button *ngIf="isEdit" class="btn btn-edit" (click)="editEnable()">renombrar</button>
   </div>
+  <div class="edit">
+    <button class="btn btn-edit" [routerLink]="['/contacts-book', contactsBook.id]">Contactos</button>
+  </div>
+
+  <div class="container-share">
+    <button class="btn-share" (click)="share()"><img src="assets/icons/share.svg"></button>
+  </div>
+
 </div>
+

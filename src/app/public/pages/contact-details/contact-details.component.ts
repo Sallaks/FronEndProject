@@ -17,14 +17,13 @@ export class ContactDetailsComponent implements OnInit {
     telephoneNumber: "",
     cellPhoneNumber: "",
     description: "",
+    contactsBookId: 0
   }
-  id: number | undefined
-
+  id!: number
 
   constructor(private contactService: ContactService, private route: ActivatedRoute) {
   }
 
- 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       console.log(params)
