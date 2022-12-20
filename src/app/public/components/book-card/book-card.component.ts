@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IContact } from 'src/app/core/interfaces/contact';
-import { IContactsbook } from 'src/app/core/interfaces/contacts-book';
+import { Component, OnInit } from '@angular/core';
 import { ContactService } from 'src/app/core/services/contact.service';
 
 @Component({
@@ -14,14 +12,10 @@ export class BookCardComponent implements OnInit {
 
    completeName!: string;
 
-  @Input() contactsbook!: IContactsbook;
-
-  contactComplete: IContactsbook | undefined;
+  isEdit: boolean = true;
 
   ngOnInit(): void {
   }
-
-  isEdit: boolean = false;
 
   editEnable(){
     this.isEdit = !this.isEdit
@@ -31,12 +25,11 @@ export class BookCardComponent implements OnInit {
   save(value:string){
     this.completeName=value
     this.editEnable();
-
   }
 
   cancel(element:HTMLInputElement){
     element.value=this.completeName
-  
+    this.editEnable()
   }
 
 

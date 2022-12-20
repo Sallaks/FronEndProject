@@ -1,15 +1,13 @@
-<div class="cards">
-  <div class="card card-1">
-    <h2 class="cardtitle"></h2>
-    <div class="rename">
-      <input #name [value]="completeName" class="input-name" type="text" [disabled]="isEdit" />
-      <div *ngIf="!isEdit" class="options">
-      <button class="btn btn-save"  (click)="save(name.value)">guardar</button>
-      <button class="btn btn-cancel" (click)="cancel(name)">cancelar</button>
-      </div>
+<div class="card card-1">
+  <h2 class="card-title"></h2>
+  <div class="rename">
+    <input #name [value]="completeName" class="input-name" type="text" [disabled]="isEdit"/>
+    <div *ngIf="!isEdit" class="options">
+      <button class="btn btn-save" (click)="save(name.value)"><img class="option-icon" src="assets/icons/check.svg" alt="✓"></button>
+      <button class="btn btn-cancel" (click)="cancel(name)"><img class="option-icon" src="assets/icons/cancel.svg" alt="x"></button>
     </div>
-    <div>
-      <button *ngIf="isEdit" class="btn btn-edit" (click)="editEnable()">rename</button>
-    </div>
+  </div>
+  <div class="edit">
+    <button *ngIf="isEdit" class="btn btn-edit" (click)="editEnable()">renombrar</button>
   </div>
 </div>

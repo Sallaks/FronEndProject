@@ -1,35 +1,68 @@
-
-.cards {
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 190px;
-  font-family:"Open Sans";
-
-}
-
 .card {
-  margin: 20px;
+  font-family: 'Open Sans', sans-serif;
   padding: 20px;
   width: 300px;
   height: 190px;
-  display: grid;
-  grid-template-rows: 20px 50px 1fr 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   border-radius: 15px;
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
 }
 
+.rename {
+  display: flex;
+  flex-direction: row;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.btn {
+  all: unset;
+}
+
+.btn-save {
+  filter: invert(65%) sepia(68%) saturate(439%) hue-rotate(56deg) brightness(93%) contrast(90%);
+}
+
+.btn-cancel {
+  filter: invert(51%) sepia(13%) saturate(2938%) hue-rotate(313deg) brightness(100%) contrast(127%);
+}
+
+.option-icon {
+  width: 24px;
+  margin: 1px;
+}
+
+.edit {
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.btn-edit {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
 .card:hover {
-  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.01);
 }
 
-
-.cardtitle {
+.card-title {
   font-weight: 400;
   color: #000000;
 }
@@ -40,7 +73,6 @@
 
 .input-name{
   all:unset;
-
 }
 
 .input-name:disabled{
