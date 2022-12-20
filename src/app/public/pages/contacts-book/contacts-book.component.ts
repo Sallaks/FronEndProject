@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IContact } from 'src/app/core/interfaces/contact';
 import { IContactsbook } from 'src/app/core/interfaces/contacts-book';
 import { ContactService } from 'src/app/core/services/contact.service';
@@ -10,12 +10,28 @@ import { ContactService } from 'src/app/core/services/contact.service';
 })
 export class ContactsBookComponent implements OnInit {
 
-  constructor(private contactService: ContactService) { }
+  contactsBook:IContactsbook={
+    id: 0,
+    name: "",
+  }
+  id: number | undefined 
 
-contactsbooks: IContactsbook[]= [];
+  constructor(private contactService: ContactService) { }
+  
+
+ contactsbooks: IContactsbook[]= [];
+
 
   ngOnInit(): void {
   }
+
+  isEdit: boolean = false;
+
+  editEnable(){
+    this.isEdit = !this.isEdit
+  }
+
+
 
 }
 

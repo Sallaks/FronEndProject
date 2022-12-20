@@ -12,7 +12,7 @@ export class BookCardComponent implements OnInit {
 
   constructor(private contactService: ContactService) { }
 
-  @Input() completeName!: string;
+   completeName!: string;
 
   @Input() contactsbook!: IContactsbook;
 
@@ -21,15 +21,23 @@ export class BookCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getinitials(): string {
-    return this.contactsbook.name
-    .slice(0, 1)
-    .concat(
-        this.contactsbook.name.slice(
-            this.contactsbook.name.length - 1,
-            this.contactsbook.name.length
-        )
-    );
+  isEdit: boolean = false;
+
+  editEnable(){
+    this.isEdit = !this.isEdit
   }
+
+
+  save(value:string){
+    this.completeName=value
+    this.editEnable();
+
+  }
+
+  cancel(element:HTMLInputElement){
+    element.value=this.completeName
+  
+  }
+
 
 }
