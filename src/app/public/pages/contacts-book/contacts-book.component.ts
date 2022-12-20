@@ -37,14 +37,7 @@ export class ContactsBookComponent implements OnInit {
     const code = Number(value);
     await this.contactsBookService.share(code);
     await this.getAllContactsBooksByUser();
-    this.reload();
 
-  }
-
-  reload() {
-    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate(['./'], { relativeTo: this.route });
   }
 }
 
